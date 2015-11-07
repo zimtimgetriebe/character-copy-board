@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>character copy board &mdash; by zimtimgetriebe</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+
+    <!--[if lt IE 9]>
+        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+<style>
+    button { 
+        display: block; 
+        margin: 1em;
+    }
+    footer {
+        margin-top: 3em;
+    }
+</style>
+</head>
+<body>
+
+    <h1>character copy board</h1>
+    
+    <button data-clipboard-text="&#8202;">
+        copy hair space
+    </button>
+
+    <button data-clipboard-text="&#8203;">
+        copy zero-width​space
+    </button>
+
+    <button data-clipboard-text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.">
+        copy lorem ipsum 100w
+    </button>
+
+
+
+
+    <footer>
+        <small>inspired by <a href="http://www.smashingmagazine.com/2015/10/space-yourself/">Space Yourself</a>, powered by <a href="https://zenorocha.github.io/clipboard.js/">clipboard.js</a>, created by <a href="http://twitter.com/krakrakrakrakra">@krakrakrakrakra</small>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    <script>
+    new Clipboard('button');
+    </script>
+
+</body>
+</html>
+
+
+
