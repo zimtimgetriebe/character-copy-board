@@ -3,7 +3,7 @@
 <head>
 
     <meta charset="UTF-8">
-    <title>character copy board &mdash; by zimtimgetriebe</title>
+    <title>character copy board &mdash; by zimtimgetriebe / kra</title>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width">
@@ -11,46 +11,92 @@
     <!--[if lt IE 9]>
         <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+
+    <link href="https://fonts.googleapis.com/css?family=Hind:300" rel="stylesheet">
+
 <style>
-    button { 
-        display: block; 
-        margin: 1em;
+    body {
+        padding: 1em;
+        margin: 0;
+        box-sizing: border-box;
+        font: 200 16px Hind, Roboto, sans-serif;
     }
+
+    h1 {
+        text-transform: uppercase;
+    }
+
+    button { 
+        display: inline-block; 
+        margin: .2em;
+        background: transparent;
+        font-size: 14px;
+        line-height: 1;
+        color: #55acee;
+        border: 1px solid #55acee;
+        padding: .4em 1em;
+        border-radius: 3px;
+        cursor: pointer;
+        outline: none;
+        letter-spacing: -.01em;
+        transition: background .1s ease-out;
+    }
+
+    button:hover {
+        color: #fff;
+        background: #55acee;
+        transition: background .1s ease-in;
+    }
+
     footer {
         margin-top: 3em;
+        color: #aaa;
+        font-size: smaller;
     }
+
+    footer a {
+        color: #0078ae;
+        text-decoration: none;
+        border-bottom: 1px solid #0078ae;
+    }
+
+    footer a:hover {
+        color: #00adfb;
+        border-color: #00adfb;
+    }
+
+    @media (max-width: 480px) {
+        h1 { font-size: 1em }
+        .button-wrapper {
+            display: flex; 
+            flex-direction: column;
+        }
+        button { padding: .7em;}
+    }
+
 </style>
 </head>
 <body>
-
     <h1>character copy board</h1>
-    
-    <button data-clipboard-text="&#8202;">
-        copy hair space
-    </button>
 
-    <button data-clipboard-text="&#8203;">
-        copy zero-width​space
-    </button>
-
-    <button data-clipboard-text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.">
-        copy lorem ipsum 100w
-    </button>
-
-
-
+    <div class="button-wrapper">
+        <button data-clipboard-text="&#8202;" title="copy a hair space character">copy hair space</button>
+        <button data-clipboard-text="&#8203;" title="copy a zero-widthspace character">copy zero-width​space</button>
+        <button data-clipboard-text="&trade;" title="copy trademark symbol">&trade;</button>
+        <button data-clipboard-text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet." title="copy lorem ipsum with 100 words">copy lorem ipsum 100w</button>
+        <button data-clipboard-text="☛" title="copy black right pointing index hand symbol">☛</button>
+        <button data-clipboard-text="☞" title="copy white right pointing index hand symbol">☞</button>
+        <button data-clipboard-text="❧" title="copy floral symbol">❧</button>
+    </div>
 
     <footer>
-        <small>inspired by <a href="http://www.smashingmagazine.com/2015/10/space-yourself/">Space Yourself</a>, powered by <a href="https://zenorocha.github.io/clipboard.js/">clipboard.js</a>, created by <a href="http://twitter.com/krakrakrakrakra">@krakrakrakrakra</small>
+        <small>inspired by <a href="http://www.smashingmagazine.com/2015/10/space-yourself/">Space Yourself</a>, powered by <a href="https://zenorocha.github.io/clipboard.js/">clipboard.js</a>, created by <a href="http://twitter.com/krakrakrakrakra">@krakrakrakrakra</a>.</small>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
-    <script>
-    new Clipboard('button');
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+<script>
+new Clipboard('button');
+</script>
 
 </body>
 </html>
-
-
-
