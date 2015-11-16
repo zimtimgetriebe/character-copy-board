@@ -33,7 +33,7 @@
 
     h1 {
         font: 100 2em Roboto, -apple-system, sans-serif;
-        margin: 1em .5rem;
+        margin: 1rem .5rem;
     }
 
     button {
@@ -68,7 +68,7 @@
         padding: 2em;
         background: #999;
         color: #ddd;
-        margin: 5em .5rem;
+        margin: 4em .5rem 3em;
         border-radius: 2px;
         font: 300 12px/1.4 Roboto, -apple-system, sans-serif;
     }
@@ -79,7 +79,12 @@
         color: #eee;
     }
 
-    aside p { margin-bottom: 1em }
+    aside p:not(:last-child) { margin-bottom: 1em }
+
+    aside a { 
+        color: #fff;
+        text-decoration: none;
+    }
 
     footer {
         box-shadow: inset 0 20px 20px -20px rgba(0,0,0,.5);
@@ -106,6 +111,12 @@
             width: 690px;
             margin: 0 auto;
         }
+        footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
     }
 
 </style>
@@ -113,7 +124,7 @@
 <body>
     <div class="wrapper">
 
-        <h1>character copy board</h1>
+        <h1 class="heading">character copy board</h1>
 
         <button data-clipboard-text="&#8202;" title="copy a hair space character">copy hair space</button>
 
@@ -133,10 +144,13 @@
 
         <aside>
                 <h2>Why</h2>
-                <p>This is created on personal purpose to quickly get access to special characters I'd like to use inside twitter.</p>
+                <p>This was created for a personal purpose to quickly get access to special characters I'd like to use inside twitter.</p>
 
                 <h2>Use</h2>
-                <p>Want a genetiv s on a #hashtag without cluttering? Add zero-whitespace. Want to indicate a useful link? Paste a pointing hand symbol. You got it, don't you?</p>
+                <p>Want an alteration on a special <a href="https://twitter.com/search?f=tweets&vertical=default&q=%23hash&src=typd">#hash</a>&#8203;tag without cluttering the functionality or write about <code title="e.g. when you write about Cascading Style Sheets">@&#8203;import</code> without actually mentioning? Add zero-whitespace. Want to indicate <a href="https://www.youtube.com/watch?v=DLzxrzFCyOs">☛ a useful link</a>? Paste a pointing hand symbol. You got it.</p>
+
+                <h2>Issues</h2>
+                <p>Due to restrictions in Safari browse this will not work. You need to copy it by hand.</p>
 
         </aside>
     </div>
@@ -147,7 +161,15 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
     <script>
-    new Clipboard('button');
+    var clipboard = new Clipboard('button');
+
+    clipboard.on('success', function(e) {
+        console.log('success');
+    });
+
+    clipboard.on('error', function(e) {
+        alert('That doesn\'t worked. Maybe the restrictions of Safari are causing this issue or you have an outdated browser. However – you need to copy by hand :(');
+    });
     </script>
 
 </body>
